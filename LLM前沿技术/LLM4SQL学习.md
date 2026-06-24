@@ -2,12 +2,9 @@
 # How to Get Your Agent Near 100% Accurate Data
 
 https://cloud.google.com/blog/products/databases/how-to-get-your-agent-near-100-percent-accurate-data
-
-很多人看到一个数据查询 Agent 有 90% 的准确率，会觉得已经很不错了。但在真实业务里，90% 远远不够。原因很简单：**误差会累计。**
-
-一个 Agent 如果只是偶尔回答错一个问题，看起来影响不大。但当它被接入业务系统、报表分析、运营决策、自动化流程之后，每一次错误查询都会继续影响后续判断。一次错误的 SQL，可能导致一个错误的数据结论；一个错误的数据结论，又可能触发错误的业务动作。
-
-所以，面向真实业务的数据 Agent，目标不应该只是“多数时候看起来对”，而应该尽可能接近 100% 的准确率。
+2026年4月11日的博客
+本文学习google的博客，主要理解为什么LLM写SQL不可靠，以及google QueryData的解决思路，是对Schema的列名做一个解释，以及对于prompt中的一些经常出现的关键业务问题，提前为关键业务问题提供标准化并且可控的 SQL 生成规则。
+总而言之，我觉得思路很简单，就是通用能力是来自于LLM本身，然后为写SQL的agent提供类似于SKILL的东西（比如schema的解释或者关键业务问题的模版）
 
 ## 为什么 LLM 写 SQL 仍然不够可靠？
 
